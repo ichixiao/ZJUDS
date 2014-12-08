@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class MaxSubSum {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int N = Integer.parseInt(sc.nextLine());
+    if (N <= 100000){
+      String[] input = sc.nextLine().split(" ");
+      int[] Seq = new int[N];
+      boolean helper = false;
+      for (int i = 0; i < N; i++) {
+        Seq[i] = Integer.parseInt(input[i]);
+        if (Seq[i] > 0){
+          helper = true;
+        }
+      }
+      int MaxSum = 0;
+      if(helper) {
+        int ThisSum = 0;
+        
+        for(int i = 0; i < N; i++) {
+          ThisSum += Seq[i];
+          if(ThisSum > MaxSum) {
+            MaxSum = ThisSum;
+          }
+          else if (ThisSum < 0) {
+            ThisSum = 0;
+          }
+        }
+        
+      }
+      
+      
+      System.out.println(MaxSum);
+    }
+    sc.close();
+  }
+}
