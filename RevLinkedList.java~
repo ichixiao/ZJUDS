@@ -1,0 +1,11 @@
+public class RevLinkedList {
+  public static void main(String[] args) {
+    int address;
+    int N;
+    int K;
+    
+    if(K >= N) 
+    
+  }
+  
+}
